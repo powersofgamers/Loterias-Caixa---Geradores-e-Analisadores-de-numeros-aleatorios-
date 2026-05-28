@@ -1,0 +1,31 @@
+import random
+import os
+
+# Limpa a tela
+os.system('cls' if os.name == 'nt' else 'clear')
+
+# Banner
+banner = r"""
+███╗   ███╗███████╗ ██████╗  █████╗     ██████╗ ██╗   ██╗
+████╗ ████║██╔════╝██╔════╝ ██╔══██╗    ██╔══██╗╚██╗ ██╔╝
+██╔████╔██║█████╗  ██║  ███╗███████║    ██████╔╝ ╚████╔╝ 
+██║╚██╔╝██║██╔══╝  ██║   ██║██╔══██║    ██╔═══╝   ╚██╔╝  
+██║ ╚═╝ ██║███████╗╚██████╔╝██║  ██║    ██║        ██║   
+╚═╝     ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝    ╚═╝        ╚═╝   
+"""
+
+print(banner)
+print("=" * 60)
+print("🎰 SORTEADOR DA MEGA-SENA 🎰")
+print("=" * 60)
+
+# Sorteia 6 números únicos de 1 a 60
+numeros = random.sample(range(1, 61), 6)
+
+# Ordena os números
+numeros.sort()
+
+print("\nNúmeros sorteados:")
+print(" ➜ ", " | ".join(f"{n:02d}" for n in numeros))
+
+print("\nBoa sorte! 🍀")

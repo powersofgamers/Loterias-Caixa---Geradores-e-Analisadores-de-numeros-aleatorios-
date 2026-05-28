@@ -1,0 +1,39 @@
+import random
+import os
+import time
+
+# Limpar tela
+os.system("cls" if os.name == "nt" else "clear")
+
+# Banner
+banner = r"""
+███╗   ███╗██╗██╗     ██╗ ██████╗ ███╗   ██╗ █████╗ ██████╗ ██╗ █████╗ 
+████╗ ████║██║██║     ██║██╔═══██╗████╗  ██║██╔══██╗██╔══██╗██║██╔══██╗
+██╔████╔██║██║██║     ██║██║   ██║██╔██╗ ██║███████║██████╔╝██║███████║
+██║╚██╔╝██║██║██║     ██║██║   ██║██║╚██╗██║██╔══██║██╔══██╗██║██╔══██║
+██║ ╚═╝ ██║██║███████╗██║╚██████╔╝██║ ╚████║██║  ██║██║  ██║██║██║  ██║
+╚═╝     ╚═╝╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝
+"""
+
+print(banner)
+print("🎰 Sorteador Milionária 🎰")
+print("-" * 60)
+
+time.sleep(1)
+
+# Sorteio dos 6 números
+numeros = sorted(random.sample(range(1, 51), 6))
+
+# Sorteio dos 2 trevos da sorte
+trevos = sorted(random.sample(range(1, 7), 2))
+
+# Exibição
+print("\n📌 Números sorteados:")
+for n in numeros:
+    print(f"🔹 {n}")
+
+print("\n🍀 Trevos da Sorte:")
+for t in trevos:
+    print(f"🍀 {t}")
+
+print("\nBoa sorte! 🎉")
